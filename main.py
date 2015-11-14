@@ -31,9 +31,15 @@ def generate(n, m, prob):
 				map[i,j] = DIE
 
 	return map
-n = 10
-m = 10
-map = generate(n,m, 0.3)
-while True:	
-	output_matrix(map, n, m)
-	os.system('cls')
+
+def main() :
+	n = 10
+	m = 10
+	map = generate(n,m, 0.3)
+	while True:	
+		output_matrix(map, n, m)
+		os.system('cls')
+
+if __name__ == '__main__':
+    main()
+
