@@ -7,12 +7,10 @@ def generate(n, m, prob):
 	map = {}
 	for i in xrange(n):
 		for j in xrange(m):
-			piv = random.randin(0, 100)
-			if piv / 100 > prob:
+			piv = random.random()
+			if piv > prob:
 				map[i,j] = ALIVE
 			else:
 				map[i,j] = DIE
 
 	return map
-
-
