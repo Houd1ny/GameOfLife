@@ -1,4 +1,5 @@
 import random
+import os
 
 ALIVE = 1
 DIE = 0
@@ -11,12 +12,12 @@ def amount_of_lives(dict,i,j):
 			++s;
 	return s;
 	
-def output_matrix(dict,n,m):
-	for i in range(n):
-		var strLine="";
-		for j in range(m):
-			strLine+=dict.get(i,j);
-		print str;
+def output_matrix(map,n,m):
+	for i in xrange(n):
+		strLine="";
+		for j in xrange(m):
+			strLine = strLine + str(map[i,j]) + " " 
+		print strLine;
 		
 
 def generate(n, m, prob):
@@ -24,9 +25,15 @@ def generate(n, m, prob):
 	for i in xrange(n):
 		for j in xrange(m):
 			piv = random.random()
-			if piv > prob:
+			if piv < prob:
 				map[i,j] = ALIVE
 			else:
 				map[i,j] = DIE
 
 	return map
+n = 10
+m = 10
+map = generate(n,m, 0.3)
+while True:	
+	output_matrix(map, n, m)
+	os.system('cls')
